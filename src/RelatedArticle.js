@@ -9,7 +9,7 @@ import React, {Component} from "react";
 import {MegadraftPlugin, MegadraftIcons} from "megadraft";
 
 
-const {BlockContent, BlockData, BlockInput, CommonBlock} = MegadraftPlugin;
+const {BlockInput} = MegadraftPlugin;
 
 
 export default class RelatedArticle extends Component {

@@ -9,38 +9,51 @@ import TestUtils from "react-addons-test-utils";
 import chai from "chai";
 import sinon from "sinon";
 
-import Block from "../src/Block";
+import RelatedArticlesBlock from "../src/Block";
 
 let expect = chai.expect;
 
-describe("Block", function () {
-  beforeEach(function () {
+describe("RelatedArticleBlock", function() {
+  beforeEach(function() {
     this.data = {
-      caption: "media caption"
+      articles: [{
+        key: "abcde",
+        title: "Title",
+        link: "globo.com"
+      }, {
+        key: "12345",
+        title: "Title 2",
+        link: "g1.globo.com"
+      }]
     };
 
-    this.setReadOnly = sinon.spy();
     this.updateEntity = sinon.spy();
     this.remove = sinon.spy();
 
-    this.wrapper = TestUtils.renderIntoDocument(
-      <Block container={this} blockProps={this} data={this.data} />
+    this.component = TestUtils.renderIntoDocument(
+      <RelatedArticlesBlock
+        data={this.data}
+        container={this}
+      />
     );
 
-    this.caption = TestUtils.scryRenderedDOMComponentsWithTag(this.wrapper, "input")[0];
+    this.add = TestUtils.findRenderedDOMComponentWithClass(
+      this.component, "related-articles__add-new");
   });
 
-  it("renders caption from data", function () {
-    expect(this.caption.value).to.be.equal(this.data.caption);
+  it("clicking on add should add an article", function() {
+    TestUtils.Simulate.click(this.add);
+    expect(this.updateEntity.args[0][0].articles.length).to.be.equal(3);
   });
 
-  it("updates entity on caption change", function () {
-    this.caption.value = "new caption";
-    TestUtils.Simulate.change(this.caption);
-    expect(this.updateEntity.calledWith({caption: "new caption"})).to.be.true;
+  it("should remove an article", function() {
+    this.component.removeArticle("abcde");
+    expect(this.updateEntity.args[0][0].articles.length).to.be.equal(1);
   });
 
-  it("your tests here...", function () {
-    expect(true).to.be.false;
+  it("should update an article", function() {
+    this.component.updateArticle("abcde", "title", "new title");
+    expect(this.updateEntity.args[0][0].articles[0].title).to.be.equal(
+      "new title");
   });
 });

@@ -9,7 +9,7 @@ import React, {Component} from "react";
 import {MegadraftPlugin, MegadraftIcons} from "megadraft";
 
 
-const {BlockContent, BlockData, BlockInput, CommonBlock} = MegadraftPlugin;
+const {BlockContent, CommonBlock} = MegadraftPlugin;
 
 import {genKey} from "draft-js";
 

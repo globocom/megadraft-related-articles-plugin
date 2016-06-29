@@ -19,7 +19,7 @@ export default class Button extends Component {
   }
 
   onClick(e) {
-    const data = {articles: [{key: DraftJS.genKey()}]}
+    const data = {articles: [{key: DraftJS.genKey()}]};
     const entityKey = DraftJS.Entity.create(PLUGIN_TYPE, "IMMUTABLE", data);
 
     this.props.onChange(DraftJS.AtomicBlockUtils.insertAtomicBlock(
