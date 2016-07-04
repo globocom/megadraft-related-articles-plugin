@@ -38,18 +38,17 @@ export default class RelatedArticle extends Component {
       <div className="related-articles">
         <div className="related-articles__inputs">
           <BlockInput
-                placeholder="Title"
-                styles={{padding: "small", text: "big"}}
-                value={this.props.item.title}
-                onChange={this._handleTitleChange} />
+            placeholder="Title"
+            styles={{padding: "small", text: "big"}}
+            value={this.props.item.title}
+            onChange={this._handleTitleChange} />
           <BlockInput
             placeholder="Link"
             value={this.props.item.link}
             styles={{padding: "small"}}
             onChange={this._handleLinkChange} />
         </div>
-        <div className="related-articles__trash"
-             onClick={this._handleDeleteClick}>
+        <div className="related-articles__trash" onClick={this._handleDeleteClick}>
           <MegadraftIcons.DeleteIcon/>
         </div>
       </div>
