@@ -1,5 +1,5 @@
 {
-  "name": "related-articles-plugin",
+  "name": "megadraft-related-articles-plugin",
   "version": "0.0.1",
   "description": "related articles plugin",
   "main": "lib/plugin.js",

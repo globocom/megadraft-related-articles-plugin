@@ -5,5 +5,5 @@
  */
 
 export default {
-  PLUGIN_TYPE: "related-articles-plugin"
+  PLUGIN_TYPE: "megadraft-related-articles-plugin"
 };
