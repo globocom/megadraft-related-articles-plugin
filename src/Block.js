@@ -24,11 +24,6 @@ export default class RelatedArticleBlock extends Component {
     this.updateArticle = ::this.updateArticle;
     this.removeArticle = ::this.removeArticle;
 
-    this.defaultFeatured = "medium";
-    this.featuredOptions = [
-      {"key": "medium", "icon": MegadraftIcons.MediaMediumIcon, "label": "MEDIUM"},
-      {"key": "big", "icon": MegadraftIcons.MediaBigIcon, "label": "BIG"}
-    ];
     this.actions = [
       {"key": "delete", "icon": MegadraftIcons.DeleteIcon, "action": this.props.container.remove}
     ];
@@ -64,10 +59,7 @@ export default class RelatedArticleBlock extends Component {
 
   render(){
     return (
-      <CommonBlock {...this.props}
-                   featuredOptions={this.featuredOptions}
-                   actions={this.actions}
-                   defaultFeatured={this.defaultFeatured}>
+      <CommonBlock {...this.props} actions={this.actions}>
         <BlockContent className="with-padding">
           {this.props.data.articles.map((item) => {
             return (

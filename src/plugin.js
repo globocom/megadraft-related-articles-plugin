@@ -11,5 +11,9 @@ import {PLUGIN_TYPE} from "./constants";
 export default {
   type: PLUGIN_TYPE,
   buttonComponent: Button,
-  blockComponent: Block
+  blockComponent: Block,
+  options: {
+    featuredOptions: [],
+    defaultFeatured: null
+  }
 };
