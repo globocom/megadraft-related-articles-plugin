@@ -16,7 +16,7 @@ import {genKey} from "draft-js";
 import RelatedArticle from "./RelatedArticle";
 
 
-export default class ImageBlock extends Component {
+export default class RelatedArticleBlock extends Component {
   constructor(props) {
     super(props);
 
