@@ -29,11 +29,13 @@ describe("RelatedArticleBlock", function() {
 
     this.updateEntity = sinon.spy();
     this.remove = sinon.spy();
+    this.plugin = sinon.spy();
 
     this.component = TestUtils.renderIntoDocument(
       <RelatedArticlesBlock
         data={this.data}
         container={this}
+        blockProps={this}
       />
     );
 
