@@ -6,7 +6,7 @@
 
 import Button from "./Button";
 import Block from "./Block";
-import {PLUGIN_TYPE} from "./constants";
+import PLUGIN_TYPE from "./constants";
 
 export default {
   type: PLUGIN_TYPE,
