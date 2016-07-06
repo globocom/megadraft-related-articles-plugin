@@ -5,15 +5,12 @@
  */
 
 import React, {Component} from "react";
+import {MegadraftPlugin, MegadraftIcons, DraftJS} from "megadraft";
 
-import {MegadraftPlugin, MegadraftIcons} from "megadraft";
+import RelatedArticle from "./RelatedArticle";
 
 
 const {BlockContent, CommonBlock} = MegadraftPlugin;
-
-import {genKey} from "draft-js";
-
-import RelatedArticle from "./RelatedArticle";
 
 
 export default class RelatedArticleBlock extends Component {
@@ -32,7 +29,7 @@ export default class RelatedArticleBlock extends Component {
   _handleAddAnotherClick(event) {
     event.preventDefault();
     this.props.container.updateEntity(
-      {articles: this.props.data.articles.concat({key: genKey()})}
+      {articles: this.props.data.articles.concat({key: DraftJS.genKey()})}
     );
   }
 
