@@ -1,6 +1,6 @@
 {
   "name": "megadraft-related-articles-plugin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "related articles plugin",
   "main": "lib/plugin.js",
   "dependencies": {
