@@ -7,7 +7,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Megadraft from "megadraft";
-import {editorStateFromRaw} from "megadraft/lib/utils";
+import {editorStateFromRaw, editorStateToJSON} from "megadraft/lib/utils";
 
 import plugin from "../src/plugin";
 
@@ -27,7 +27,7 @@ class Demo extends React.Component {
   }
 
   render() {
-    const pluginName = "related articles plugin";
+    const pluginName = "Related Articles Plugin";
     return (
         <div className="content">
           <header>
