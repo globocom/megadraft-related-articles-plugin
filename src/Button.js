@@ -5,7 +5,8 @@
  */
 
 import React, {Component} from "react";
-import {DraftJS} from "megadraft";
+import {DraftJS, insertMediaBlock} from "megadraft";
+
 
 import Icon from "./icon.js";
 import constants from "./constants";
@@ -19,13 +20,7 @@ export default class Button extends Component {
 
   onClick(e) {
     const data = {articles: [{key: DraftJS.genKey()}]};
-    const entityKey = DraftJS.Entity.create(constants.PLUGIN_TYPE, "IMMUTABLE", data);
-
-    this.props.onChange(DraftJS.AtomicBlockUtils.insertAtomicBlock(
-      this.props.editorState,
-      entityKey,
-      "*"
-    ));
+    this.props.onChange(insertMediaBlock(this.props.editorState, constants.PLUGIN_TYPE, data));
   }
 
   render() {
