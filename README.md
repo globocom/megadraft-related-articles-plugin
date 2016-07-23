@@ -13,7 +13,9 @@ import plugin from "related-articles-plugin";
 
 class Example extends React.Component {
   render(){
-    <Megadraft plugins={[plugin]} />
+    return (
+      <Megadraft plugins={[plugin]} />
+    );
   }
 }
 
