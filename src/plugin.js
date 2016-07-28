@@ -13,7 +13,7 @@ export default {
   buttonComponent: Button,
   blockComponent: Block,
   options: {
-    featuredOptions: [],
-    defaultFeatured: null
+    displayOptions: [],
+    defaultDisplay: null
   }
 };
