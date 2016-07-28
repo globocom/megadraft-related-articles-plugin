@@ -5,8 +5,7 @@
  */
 
 import React, {Component} from "react";
-import {DraftJS, insertMediaBlock} from "megadraft";
-
+import {DraftJS, insertDataBlock} from "megadraft";
 
 import Icon from "./icon.js";
 import constants from "./constants";
@@ -19,8 +18,8 @@ export default class Button extends Component {
   }
 
   onClick(e) {
-    const data = {articles: [{key: DraftJS.genKey()}]};
-    this.props.onChange(insertMediaBlock(this.props.editorState, constants.PLUGIN_TYPE, data));
+    const data = {articles: [{key: DraftJS.genKey()}], type: constants.PLUGIN_TYPE};
+    this.props.onChange(insertDataBlock(this.props.editorState, data));
   }
 
   render() {

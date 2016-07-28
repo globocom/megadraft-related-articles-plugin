@@ -28,7 +28,7 @@ export default class RelatedArticleBlock extends Component {
 
   _handleAddAnotherClick(event) {
     event.preventDefault();
-    this.props.container.updateEntity(
+    this.props.container.updateData(
       {articles: this.props.data.articles.concat({key: DraftJS.genKey()})}
     );
   }
@@ -40,7 +40,7 @@ export default class RelatedArticleBlock extends Component {
         item[field] = value;
       }
     }
-    this.props.container.updateEntity({articles: this.props.data.articles});
+    this.props.container.updateData({articles: this.props.data.articles});
   }
 
   removeArticle(key) {
@@ -51,7 +51,7 @@ export default class RelatedArticleBlock extends Component {
         articles.push(item);
       }
     }
-    this.props.container.updateEntity({articles: articles});
+    this.props.container.updateData({articles: articles});
   }
 
   render(){

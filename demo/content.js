@@ -7,15 +7,7 @@
 import constants from "../src/constants";
 
 export default {
-  entityMap: {
-    0: {
-      type: constants.PLUGIN_TYPE,
-      mutability: "IMMUTABLE",
-      data: {
-        articles: [{key: "abcde"}]
-      }
-    }
-  },
+  entityMap: {},
   blocks: [
     {
       key: "ag6qs",
@@ -27,17 +19,15 @@ export default {
     },
     {
       key: "9vgd",
-      text: "*",
+      text: "",
       type: "atomic",
       depth: 0,
       inlineStyleRanges: [],
-      entityRanges: [
-        {
-          offset: 0,
-          length: 1,
-          key: 0
-        }
-      ]
+      entityRanges: [],
+      data: {
+        type: constants.PLUGIN_TYPE,
+        articles: [{key: "abcde"}]
+      }
     }
   ]
 };
