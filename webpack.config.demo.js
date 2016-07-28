@@ -4,6 +4,8 @@
  * License: MIT
  */
 
+var path = require("path");
+
 module.exports = {
   entry: [
     "./demo/main.js"
@@ -17,6 +19,13 @@ module.exports = {
   devServer: {
     inline: true,
     contentBase: "./"
+  },
+  resolve: {
+    extensions: [ '', '.js', '.jsx' ],
+    fallback: path.join(__dirname, "node_modules")
+  },
+  resolveLoader: {
+    root: path.join(__dirname, "node_modules")
   },
   module: {
     loaders: [
