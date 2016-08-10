@@ -27,7 +27,7 @@ describe("RelatedArticleBlock", function() {
       }]
     };
 
-    this.updateEntity = sinon.spy();
+    this.updateData = sinon.spy();
     this.remove = sinon.spy();
     this.plugin = sinon.spy();
 
@@ -45,17 +45,17 @@ describe("RelatedArticleBlock", function() {
 
   it("clicking on add should add an article", function() {
     TestUtils.Simulate.click(this.add);
-    expect(this.updateEntity.args[0][0].articles.length).to.be.equal(3);
+    expect(this.updateData.args[0][0].articles.length).to.be.equal(3);
   });
 
   it("should remove an article", function() {
     this.component.removeArticle("abcde");
-    expect(this.updateEntity.args[0][0].articles.length).to.be.equal(1);
+    expect(this.updateData.args[0][0].articles.length).to.be.equal(1);
   });
 
   it("should update an article", function() {
     this.component.updateArticle("abcde", "title", "new title");
-    expect(this.updateEntity.args[0][0].articles[0].title).to.be.equal(
+    expect(this.updateData.args[0][0].articles[0].title).to.be.equal(
       "new title");
   });
 });
