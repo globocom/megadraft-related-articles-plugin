@@ -20,4 +20,5 @@ build:
 	@npm run --silent build
 
 build_dist:
+	@npm run --silent build:css
 	@npm run --silent build:dist
