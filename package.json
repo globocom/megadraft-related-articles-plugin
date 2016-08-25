@@ -4,8 +4,7 @@
   "description": "Megadraft Related Articles",
   "main": "dist/megadraft_related_articles.js",
   "style": "dist/css/plugin.css",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.6.0",
@@ -27,6 +26,7 @@
     "gulp-sass": "^2.3.1",
     "jsdom": "^8.3.1",
     "megadraft": "^0.3.1",
+    "megadraft-related-articles-plugin": "^0.2.0",
     "mocha": "^2.4.5",
     "object-assign": "^4.1.0",
     "react": "^15.1.0",

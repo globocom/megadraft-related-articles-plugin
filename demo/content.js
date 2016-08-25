@@ -4,7 +4,7 @@
  * License: MIT
  */
 
-import constants from "../src/constants";
+import constants from "megadraft-related-articles-plugin/lib/constants";
 
 export default {
   entityMap: {
@@ -27,7 +27,18 @@ export default {
       entityRanges: [],
       data: {
         type: constants.PLUGIN_TYPE,
-        caption: "Plugin caption"
+        articles: [
+          {
+            key: "abcde",
+            title: "Megadraft",
+            link: "http://globocom.github.io/megadraft/"
+          },
+          {
+            key: "fghij",
+            title: "Related Articles Plugin",
+            link: "https://github.com/globocom/megadraft-related-articles-plugin"
+          }
+        ]
       }
     }
   ]
