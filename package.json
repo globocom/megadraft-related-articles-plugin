@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "related articles plugin",
   "main": "lib/plugin.js",
+  "style": "dist/css/plugin.css",
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
