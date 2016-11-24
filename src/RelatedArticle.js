@@ -4,6 +4,8 @@
  * License: MIT
  */
 
+/* global __ */
+
 import React, {Component} from "react";
 
 import {MegadraftPlugin, MegadraftIcons} from "megadraft";
@@ -38,12 +40,12 @@ export default class RelatedArticle extends Component {
       <div className="related-articles">
         <div className="related-articles__inputs">
           <BlockInput
-            placeholder="Title"
+            placeholder={__("Title")}
             styles={{padding: "small", text: "big"}}
             value={this.props.item.title}
             onChange={this._handleTitleChange} />
           <BlockInput
-            placeholder="Link"
+            placeholder={__("Link")}
             value={this.props.item.link}
             styles={{padding: "small"}}
             onChange={this._handleLinkChange} />

@@ -4,6 +4,8 @@
  * License: MIT
  */
 
+/* global __ */
+
 import React, {Component} from "react";
 import {MegadraftPlugin, MegadraftIcons, DraftJS} from "megadraft";
 
@@ -72,7 +74,7 @@ export default class RelatedArticleBlock extends Component {
             <a href="#"
                onClick={this._handleAddAnotherClick}
                className="related-articles__add-new">
-              Add another link
+              {__("Add another link")}
             </a>
           </div>
         </BlockContent>
