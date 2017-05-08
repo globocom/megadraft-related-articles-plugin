@@ -9,7 +9,7 @@ import Block from "./Block";
 import constants from "./constants";
 
 export default {
-  title: 'Related Articles',
+  title: "Related Articles",
   type: constants.PLUGIN_TYPE,
   buttonComponent: Button,
   blockComponent: Block,
