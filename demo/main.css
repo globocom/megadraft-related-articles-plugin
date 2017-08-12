@@ -30,7 +30,6 @@
   .related-articles__inputs {
     display: table-cell;
     padding: 16px 24px 24px 24px;
-    -webkit-transition: padding 0.35s ease-in-out;
     transition: padding 0.35s ease-in-out; }
   .related-articles__trash {
     border-radius: 2px;
@@ -40,7 +39,6 @@
     display: table-cell;
     line-height: 0;
     overflow: hidden;
-    -webkit-transition: width 0.35s ease-in-out;
     transition: width 0.35s ease-in-out;
     vertical-align: middle;
     width: 0; }
