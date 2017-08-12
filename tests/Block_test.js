@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from "react-dom/test-utils";
 import chai from "chai";
 import sinon from "sinon";
 
@@ -31,7 +31,7 @@ describe("RelatedArticleBlock", function() {
     this.remove = sinon.spy();
     this.plugin = sinon.spy();
 
-    this.component = TestUtils.renderIntoDocument(
+    this.component = ReactTestUtils.renderIntoDocument(
       <RelatedArticlesBlock
         data={this.data}
         container={this}
@@ -39,12 +39,12 @@ describe("RelatedArticleBlock", function() {
       />
     );
 
-    this.add = TestUtils.findRenderedDOMComponentWithClass(
+    this.add = ReactTestUtils.findRenderedDOMComponentWithClass(
       this.component, "related-articles__add-new");
   });
 
   it("clicking on add should add an article", function() {
-    TestUtils.Simulate.click(this.add);
+    ReactTestUtils.Simulate.click(this.add);
     expect(this.updateData.args[0][0].articles.length).to.be.equal(3);
   });
 

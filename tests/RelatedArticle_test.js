@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from "react-dom/test-utils";
 import chai from "chai";
 import sinon from "sinon";
 
@@ -24,7 +24,7 @@ describe("RelatedArticle", function() {
     this.removeArticle = sinon.spy();
     this.updateArticle = sinon.spy();
 
-    this.component = TestUtils.renderIntoDocument(
+    this.component = ReactTestUtils.renderIntoDocument(
       <RelatedArticle
         item={this.data}
         removeArticle={this.removeArticle}
@@ -32,15 +32,15 @@ describe("RelatedArticle", function() {
       />
     );
 
-    this.exclude = TestUtils.findRenderedDOMComponentWithClass(
+    this.exclude = ReactTestUtils.findRenderedDOMComponentWithClass(
       this.component, "related-articles__trash");
 
-    this.title = TestUtils.scryRenderedDOMComponentsWithTag(this.component, "input")[0];
-    this.link = TestUtils.scryRenderedDOMComponentsWithTag(this.component, "input")[1];
+    this.title = ReactTestUtils.scryRenderedDOMComponentsWithTag(this.component, "input")[0];
+    this.link = ReactTestUtils.scryRenderedDOMComponentsWithTag(this.component, "input")[1];
   });
 
   it("clicking on the remove should remove an article", function() {
-    TestUtils.Simulate.click(this.exclude);
+    ReactTestUtils.Simulate.click(this.exclude);
     expect(this.removeArticle.calledWith(this.data.key)).to.be.true;
   });
 
@@ -54,7 +54,7 @@ describe("RelatedArticle", function() {
 
   it("updates entity on title change", function () {
     this.title.value = "new title";
-    TestUtils.Simulate.change(this.title);
+    ReactTestUtils.Simulate.change(this.title);
     expect(this.updateArticle.calledWith(
       this.data.key,
       "title",
@@ -64,7 +64,7 @@ describe("RelatedArticle", function() {
 
   it("updates entity on link change", function () {
     this.link.value = "new link";
-    TestUtils.Simulate.change(this.link);
+    ReactTestUtils.Simulate.change(this.link);
     expect(this.updateArticle.calledWith(
       this.data.key,
       "link",
