@@ -72,8 +72,8 @@ export default class RelatedArticleBlock extends Component {
           })}
           <div className="related-articles__add-new-wrapper">
             <a href="#"
-               onClick={this._handleAddAnotherClick}
-               className="related-articles__add-new">
+              onClick={this._handleAddAnotherClick}
+              className="related-articles__add-new">
               {__("Add another link")}
             </a>
           </div>
