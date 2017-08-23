@@ -4,12 +4,17 @@
  * License: MIT
  */
 
+var webpack = require("webpack")
+
 module.exports = {
   entry: [
     "."
   ],
+  plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
+  ],
   output: {
-    path: "./dist",
+    path: __dirname + "./dist",
     publicPath: "/dist/",
     filename: "related-articles-plugin.js",
     library: "related-articles-plugin",
@@ -29,12 +34,8 @@ module.exports = {
     loaders: [
       {
         exclude: /node_modules/,
-        loader: "babel"
+        loader: "babel-loader"
       },
-      {
-        test: /\.json$/,
-        loader: "json"
-      }
     ]
   }
 };
