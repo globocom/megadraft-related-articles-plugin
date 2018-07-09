@@ -24,7 +24,11 @@ module.exports = {
     modules: [
       path.join(__dirname, "src"),
       "node_modules"
-    ]
+    ],
+    alias: {
+      "react": path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom")
+    }
   },
   module: {
     loaders: [
