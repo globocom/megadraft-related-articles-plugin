@@ -5,9 +5,9 @@
   "main": "lib/plugin.js",
   "style": "dist/css/plugin.css",
   "dependencies": {
+    "megadraft": "^0.4.37",
     "react": "15.6.1",
-    "react-dom": "15.6.1",
-    "megadraft": "^0.4.27"
+    "react-dom": "15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
