@@ -21,7 +21,7 @@ const errorStyle = {
 export default class RelatedArticle extends Component {
   constructor(props) {
     super(props);
-    this.state={ error: false }
+    this.state={ error: false };
 
     this._handleTitleChange = ::this._handleTitleChange;
     this._handleLinkChange = ::this._handleLinkChange;
@@ -37,10 +37,14 @@ export default class RelatedArticle extends Component {
     this.props.updateArticle(this.props.item.key, "title", event.target.value);
   }
 
-  _handleLinkChange(event) {  
-    this.setState({error: this.checkLink()})
-    this.props.updateArticle(this.props.item.key, "link", event.target.value) 
-  
+  _handleLinkChange(event) {
+    if(this.checkLink(event.target.value)) {
+      this.setState({error: false});
+      this.props.updateArticle(this.props.item.key, "link", event.target.value);
+    } else {
+      this.setState({error: true});
+      this.props.updateArticle(this.props.item.key, "link", event.target.value);
+    }
   }
 
   _handleDeleteClick(event) {
@@ -48,7 +52,7 @@ export default class RelatedArticle extends Component {
   }
 
   render() {
-    const { error } = this.state
+    const { error } = this.state;
 
     return (
       <div className="related-articles">
@@ -64,7 +68,7 @@ export default class RelatedArticle extends Component {
             styles={{padding: "small"}}
             onChange={this._handleLinkChange} 
             error= {error && <p style={errorStyle}>{"Link Inválido"}</p>} 
-            />
+          />
         </div>
         <div className="related-articles__trash" onClick={this._handleDeleteClick}>
           <MegadraftIcons.DeleteIcon/>
