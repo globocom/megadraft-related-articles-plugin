@@ -65,10 +65,6 @@ describe("RelatedArticle", function() {
   it("updates entity on link change", function () {
     this.link.value = "new link";
     ReactTestUtils.Simulate.change(this.link);
-    expect(this.updateArticle.calledWith(
-      this.data.key,
-      "link",
-      "new link"
-    )).to.be.true;
+    expect(this.updateArticle.calledWith(this.data.key,"link","new link")).to.be.true;
   });
 });

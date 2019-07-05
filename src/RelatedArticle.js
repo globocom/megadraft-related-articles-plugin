@@ -13,22 +13,34 @@ import {MegadraftPlugin, MegadraftIcons} from "megadraft";
 
 const {BlockInput} = MegadraftPlugin;
 
-
+const errorStyle = {
+  fontSize: 12,
+  color: "rgb(244, 67, 54)",
+  textAlign: "left",
+};
 export default class RelatedArticle extends Component {
   constructor(props) {
     super(props);
+    this.state={ error: false }
 
     this._handleTitleChange = ::this._handleTitleChange;
     this._handleLinkChange = ::this._handleLinkChange;
     this._handleDeleteClick = ::this._handleDeleteClick;
   }
 
+  checkLink(link) {
+    const regexp = /^(http(s)?:\/\/)[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/;
+    return regexp.test(link) ? true : false;
+  }
+
   _handleTitleChange(event) {
     this.props.updateArticle(this.props.item.key, "title", event.target.value);
   }
 
-  _handleLinkChange(event) {
-    this.props.updateArticle(this.props.item.key, "link", event.target.value);
+  _handleLinkChange(event) {  
+    this.setState({error: this.checkLink()})
+    this.props.updateArticle(this.props.item.key, "link", event.target.value) 
+  
   }
 
   _handleDeleteClick(event) {
@@ -36,6 +48,8 @@ export default class RelatedArticle extends Component {
   }
 
   render() {
+    const { error } = this.state
+
     return (
       <div className="related-articles">
         <div className="related-articles__inputs">
@@ -48,7 +62,9 @@ export default class RelatedArticle extends Component {
             placeholder={__("Link")}
             value={this.props.item.link}
             styles={{padding: "small"}}
-            onChange={this._handleLinkChange} />
+            onChange={this._handleLinkChange} 
+            error= {error && <p style={errorStyle}>{"Link Inválido"}</p>} 
+            />
         </div>
         <div className="related-articles__trash" onClick={this._handleDeleteClick}>
           <MegadraftIcons.DeleteIcon/>
