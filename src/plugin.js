@@ -13,6 +13,7 @@ export default {
   type: constants.PLUGIN_TYPE,
   buttonComponent: Button,
   blockComponent: Block,
+  hasLinkValidator: false,
   options: {
     displayOptions: [],
     defaultDisplay: null
