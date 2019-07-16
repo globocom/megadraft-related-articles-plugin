@@ -21,6 +21,16 @@ describe("RelatedArticle", function() {
       link: "globo.com"
     };
 
+    const linkValidator = {
+      props: {
+        blockProps: {
+          plugin: {
+            hasLinkValidator: false
+          }
+        }
+      }
+    };
+
     this.removeArticle = sinon.spy();
     this.updateArticle = sinon.spy();
 
@@ -29,6 +39,7 @@ describe("RelatedArticle", function() {
         item={this.data}
         removeArticle={this.removeArticle}
         updateArticle={this.updateArticle}
+        container={linkValidator}
       />
     );
 
