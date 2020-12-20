@@ -7,6 +7,7 @@
 var webpack = require("webpack")
 
 module.exports = {
+  mode: "production",
   entry: [
     "."
   ],
@@ -31,11 +32,14 @@ module.exports = {
     contentBase: "./"
   },
   module: {
-    loaders: [
+    rules: [
       {
         exclude: /node_modules/,
         loader: "babel-loader"
       },
     ]
+  },
+  optimization: {
+    minimize: true
   }
 };

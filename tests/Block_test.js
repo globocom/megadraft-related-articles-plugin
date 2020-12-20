@@ -30,6 +30,7 @@ describe("RelatedArticleBlock", function() {
     this.updateData = sinon.spy();
     this.remove = sinon.spy();
     this.plugin = sinon.spy();
+    this.getInitialReadOnly = sinon.spy();
 
     this.component = ReactTestUtils.renderIntoDocument(
       <RelatedArticlesBlock

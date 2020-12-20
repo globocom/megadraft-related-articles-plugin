@@ -7,6 +7,7 @@
 var path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: [
     "./demo/main.js"
   ],
@@ -31,7 +32,7 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         exclude: /node_modules/,
         loader: "babel-loader"
