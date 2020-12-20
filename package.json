@@ -66,13 +66,13 @@
     "draftjs"
   ],
   "author": {
-    "author": "",
+    "author": "Globo.com",
     "email": "",
-    "url": "http://globo.com"
+    "url": "https://github.com/globocom"
   },
   "license": "MIT",
   "bugs": {
-    "url": "http://globo.com/issues"
+    "url": "https://github.com/globocom/megadraft-related-articles-plugin/issues"
   },
-  "homepage": "http://globo.com"
+  "homepage": "https://github.com/globocom/megadraft-related-articles-plugin"
 }
