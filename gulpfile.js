@@ -12,9 +12,6 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.demo.js");
 
-// The development server (the recommended option for development)
-gulp.task("default", ["dev-server"]);
-
 gulp.task("sass", function () {
   return gulp.src("./src/styles/**/*.scss")
     .pipe(sass.sync({outputStyle: "expanded"}).on("error", sass.logError))
@@ -30,18 +27,13 @@ gulp.task("demo-sass", function () {
 });
 
 gulp.task("demo-watch", function () {
-  gulp.watch("./src/sass/**/*.scss", ["demo-sass"]);
-  gulp.watch("./demo/main.scss", ["demo-sass"]);
+  gulp.watch("./src/sass/**/*.scss", gulp.series("demo-sass"));
+  gulp.watch("./demo/main.scss", gulp.series("demo-sass"));
 });
 
-gulp.task("build", function (callback) {
-  gulp.start("sass");
-});
+gulp.task("build", gulp.series("sass"));
 
-gulp.task("dev-server", function (callback) {
-  gulp.start("demo-sass");
-  gulp.start("demo-watch");
-
+gulp.task("dev-server", gulp.parallel("demo-sass","demo-watch", function (callback) {
   new WebpackDevServer(webpack(webpackConfig), {
     stats: {colors: true}
   }).listen(8080, "localhost", function (err) {
@@ -49,5 +41,7 @@ gulp.task("dev-server", function (callback) {
       throw new gutil.PluginError("webpack-dev-server", err);
     }
   });
-});
+}));
 
+// The development server (the recommended option for development)
+gulp.task("default", gulp.parallel("dev-server"));
