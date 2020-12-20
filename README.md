@@ -1,4 +1,4 @@
-# Related Articles Plugin - Megadraft Plugin [![Build Status](https://secure.travis-ci.org/globocom/megadraft-related-articles-plugin.png?branch=master)](https://travis-ci.org/backstage-ui/backstage-ui)
+# Related Articles Plugin - Megadraft Plugin
 
 ## Usage
 
