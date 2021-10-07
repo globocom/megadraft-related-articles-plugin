@@ -42,6 +42,9 @@ watch feature:
 make watch_unit
 ```
 
+## Contributing
+We encourage you to contribute to SecDevLabs! Please check out the [Contributing to Megadraft Plugin](/docs/CONTRIBUTING.md) section for guidelines on how to proceed! 🎉
+
 ## Releasing
 
 There's a `prepublish` script entry on `package.json` that runs build tasks
